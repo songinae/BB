@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+	<title></title>
+<style type="text/css">
+		
+@font-face { font-family: 'BRBA_B'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_seven@1.2/BRBA_B.woff') format('woff'); font-weight: normal; font-style: normal; }
+
+		input{background-color: #FDAB90; font-size: 25px;padding:10px;
+			border:none; box-shadow: 0px 0px 4px black inset; border-radius: 5px ; width: 59px}
+
+		body {font-size: 25px;font-family: 'BRBA_B'; background-color:#FFC9B7; margin: auto; text-align:center; }
+
+		
+
+	</style>
+</head>
+
+<body>
+
+	<h1>비만도지수를 계산해 봅시다! <br><br></h1>
+
+<img src="./1.png" style="width: 70px;">
+	당신의 키와 체중을 입력하세요<br><br>
+
+	키<input type="number"  id="myk">cm<br><br>
+	체중<input type="number"  id="myc">kg<br><br>
+	<h2><div id="monitor">당신의 비만도지수는 000입니다.</div></h2>
+	<h2><div id="monitorb" style="color:#D20003 ">당신은 000입니다. </div></h2>
+	*이 비만도계산기는 근육량과 지방량을 측정하지 않아 정확하지 않습니다. 정확한 검사는 병원에서.
+
+<script>
+	myk.oninput = function() {
+		
+		var sweight = myc.value/((myk.value*0.01)*(myk.value*0.01));
+		monitor.innerHTML = "당신의 비만도지수는 " +Math.round(sweight)+ "입니다";
+
+		if (sweight < 18.5) result = "저체중"
+	else if (sweight >= 18.5 && sweight <= 23) result = "정상"
+	else if (sweight >= 23 && sweight <= 25) result = "가체중"
+	else if (sweight >= 25 && sweight <= 30) result = "비만"
+	else if (sweight >= 30 ) result = "고도비만"	
+
+		var sweight = myc.value/((myk.value*0.01)*(myk.value*0.01));
+		monitorb.innerHTML = "당신은 " +result+ "입니다";
+
+		
+
+	}
+
+	myc.oninput = function() {
+
+		var sweight = myc.value/((myk.value*0.01)*(myk.value*0.01));
+		monitor.innerHTML = "당신의 비만도지수는 " +Math.round(sweight)+ "입니다";
+
+		if (sweight < 18.5) result = "저체중"
+	else if (sweight >= 18.5 && sweight <= 23) result = "정상"
+	else if (sweight >= 23 && sweight <= 25) result = "가체중"
+	else if (sweight >= 25 && sweight <= 30) result = "비만"
+	else if (sweight >= 30 ) result = "고도비만"	
+
+		var sweight = myc.value/((myk.value*0.01)*(myk.value*0.01));
+		monitorb.innerHTML = "당신은 " +result+ "입니다";
+
+
+
+	}
+
+
+
+
+
+
+
+</script>
+
+
+
+</body>
+
+</html>
